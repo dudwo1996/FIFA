@@ -1,27 +1,33 @@
 import dayjs from "dayjs";
 import * as S from './MyInfo.styled';
 import { useSelector } from "react-redux";
+import { useState } from "react";
 type MyInfoProps = {
     userInfo: {
         nickname: string;
         level: number;
         matchDetail: any;
     };
+    userInfoRequest: Function;
 }
 
 export const MyInfo = (props: MyInfoProps) => {
-    const { userInfo } = props;
+    const { userInfo, userInfoRequest } = props;
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);
+    const [userName, setUserName] = useState('');
+
+    const onChangeUserName = (name: string) => {
+        setUserName(name);
+    }
     return (
         <S.Container>
             {userInfo.matchDetail.length !== 0 ?
                 <>
+                    <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
+                    <S.searchBtn onClick={() => userInfoRequest(userName)}>검색</S.searchBtn>
                     <S.Div>
-                        {userInfo.nickname} 구단주님의 정보
-                    </S.Div>
-                    <S.Div>
-                        레벨: {userInfo.level}
+                        {userInfo.nickname}(Lv:{userInfo.level}) 구단주님의 정보
                     </S.Div>
                     <S.MatchHead>
                         <S.TitleString>경기 기록</S.TitleString>
@@ -43,7 +49,11 @@ export const MyInfo = (props: MyInfoProps) => {
                                     <S.TableBody key={match.matchId}>
                                         <S.BodyItem>{dayjs(match.matchDate).format("YYYY-MM-DD hh:mm")}</S.BodyItem>
                                         <S.BodyItem>{me?.nickname}</S.BodyItem>
-                                        <S.BodyItem>{me?.shoot?.goalTotal} <S.DetailButton>상세보기</S.DetailButton> {other?.shoot?.goalTotal}</S.BodyItem>
+                                        <S.BodyItem>
+                                            {me?.shoot?.goalTotal}
+                                            <S.DetailButton>상세보기</S.DetailButton>
+                                            {other?.shoot?.goalTotal}
+                                        </S.BodyItem>
                                         <S.BodyItem>{other?.nickname}</S.BodyItem>
                                         <S.BodyItem>{me?.matchDetail?.matchResult}</S.BodyItem>
                                     </S.TableBody>
@@ -52,7 +62,11 @@ export const MyInfo = (props: MyInfoProps) => {
                         }
                     </S.MatchDataDiv>
                 </>
-                : <S.Div>우측에 검색하고싶은 구단주님을 검색해주세요.</S.Div>}
+                : <>
+                    <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
+                    <S.searchBtn onClick={() => userInfoRequest(userName)}>검색</S.searchBtn>
+                </>
+            }
         </S.Container>
     )
 }

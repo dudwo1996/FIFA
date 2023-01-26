@@ -35,6 +35,7 @@ export const TitleString = styled.div`
     padding: 0 16px;
     font-size: 25px;
     color: rgb(20, 20, 50);
+    font-weight: 520;
 `
 
 export const MatchDataDiv = styled.div`
@@ -82,6 +83,24 @@ export const DetailButton = styled.button`
     height: 30px;
     display: inline-block;
     box-sizing: border-box;
+    :hover{
+        cursor: pointer;
+    }
+`
+
+export const userNameInput = styled.input`
+        background-color: white;
+    border: 1px solid #d4d9e2;
+    height: 30px;
+`
+
+export const searchBtn = styled.button`
+    background-color: white;
+    border: 1px solid #d4d9e2;
+    font-size: 14px;
+    height: 34px;
+    padding: none;
+    margin: none;
     :hover{
         cursor: pointer;
     }

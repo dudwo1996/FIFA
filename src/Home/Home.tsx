@@ -54,11 +54,11 @@ export const Home = () => {
                 </S.SideBarLeft>
                 <S.Main>
                     <S.Article>
-                        <MyInfo userInfo={userInfo} />
+                        <MyInfo userInfo={userInfo} userInfoRequest={userInfoRequest} />
                     </S.Article>
                 </S.Main>
                 <S.SideBarRight>
-                    <UserSearch userInfoRequest={userInfoRequest} />
+                    <UserSearch />
                 </S.SideBarRight>
             </S.ContainerMain>
             <S.Footer>
