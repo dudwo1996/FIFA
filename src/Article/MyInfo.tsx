@@ -2,6 +2,8 @@ import dayjs from "dayjs";
 import * as S from './MyInfo.styled';
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useModal } from "../hooks/useModal";
+import { MatchDetail } from "./MatchDetailModal/MatchDetail";
 type MyInfoProps = {
     userInfo: {
         nickname: string;
@@ -13,12 +15,17 @@ type MyInfoProps = {
 
 export const MyInfo = (props: MyInfoProps) => {
     const { userInfo, userInfoRequest } = props;
+    const modalCtrl = useModal();
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);
     const [userName, setUserName] = useState('');
 
     const onChangeUserName = (name: string) => {
         setUserName(name);
+    }
+
+    const openDetailModal = () => {
+        modalCtrl.open(<MatchDetail />);
     }
     return (
         <S.Container>
@@ -51,7 +58,7 @@ export const MyInfo = (props: MyInfoProps) => {
                                         <S.BodyItem>{me?.nickname}</S.BodyItem>
                                         <S.BodyItem>
                                             {me?.shoot?.goalTotal}
-                                            <S.DetailButton>상세보기</S.DetailButton>
+                                            <S.DetailButton onClick={openDetailModal}>상세보기</S.DetailButton>
                                             {other?.shoot?.goalTotal}
                                         </S.BodyItem>
                                         <S.BodyItem>{other?.nickname}</S.BodyItem>

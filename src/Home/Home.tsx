@@ -8,6 +8,7 @@ import { Header } from '../Header/Header'
 import * as S from './Home.style'
 import { matchDataActions } from '../store/slices/matchDataSlice'
 import { useDispatch } from 'react-redux'
+import { ModalPlacer } from '../ModalPlacer'
 export const Home = () => {
     const dispatch = useDispatch();
     const [userInfo, setUserInfo] = useState({ nickname: '', level: 0, matchDetail: [] });
@@ -64,6 +65,7 @@ export const Home = () => {
             <S.Footer>
                 <Footer />
             </S.Footer>
+            <ModalPlacer />
         </S.ContainerWrap>
     )
 }

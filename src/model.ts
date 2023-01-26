@@ -10,3 +10,14 @@ export type UserMatchInfo = {
     matchInfo: [],
     matchType: number,
 }
+
+// Modal-----------------------------
+export type ModalProps = {
+    modalId?: number;
+    closeSelf?: () => void; // 모달 닫기
+};
+
+export type ModalType = {
+    ui: JSX.Element;
+    key: number;
+};

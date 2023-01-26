@@ -1,6 +1,7 @@
 import './App.css'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import { Home } from './Home/Home'
+import { ModalPlacer } from './ModalPlacer'
 
 function App() {
   return (
