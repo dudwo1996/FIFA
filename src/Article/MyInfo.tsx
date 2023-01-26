@@ -24,8 +24,9 @@ export const MyInfo = (props: MyInfoProps) => {
         setUserName(name);
     }
 
-    const openDetailModal = () => {
-        modalCtrl.open(<MatchDetail />);
+    const openDetailModal = (matchId: string) => {
+
+        modalCtrl.open(<MatchDetail matchId={matchId} userName={userName} />);
     }
     return (
         <S.Container>
@@ -58,7 +59,7 @@ export const MyInfo = (props: MyInfoProps) => {
                                         <S.BodyItem>{me?.nickname}</S.BodyItem>
                                         <S.BodyItem>
                                             {me?.shoot?.goalTotal}
-                                            <S.DetailButton onClick={openDetailModal}>상세보기</S.DetailButton>
+                                            <S.DetailButton onClick={() => openDetailModal(match.matchId)}>상세보기</S.DetailButton>
                                             {other?.shoot?.goalTotal}
                                         </S.BodyItem>
                                         <S.BodyItem>{other?.nickname}</S.BodyItem>

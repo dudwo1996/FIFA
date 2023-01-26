@@ -6,7 +6,6 @@ export function useModal() {
 
     const open = (ui: JSX.Element) => {
         const key = Math.floor(Math.random() * 1000000);
-        console.log(ui);
         dispatch(modalActions.open({ ui, key }));
     };
 

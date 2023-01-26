@@ -24,6 +24,19 @@ export const Header = styled.div`
 
 export const Body = styled.div`
 height: 60%;
+
+`
+export const HeadOfBodyWrap = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`
+export const HeadOfBody = styled.div`
+
+`
+
+export const BodyOfBody = styled.div`
+
 `
 
 export const Foot = styled.div`
@@ -38,5 +51,7 @@ export const CloseBtn = styled.div`
     border-radius: 10px;
     margin: 20px;
     padding: 5px;
-
+    :hover{
+        cursor: pointer;
+    }
 `
