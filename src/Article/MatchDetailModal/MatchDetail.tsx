@@ -20,7 +20,7 @@ export const MatchDetail = (props: MatchDetailProps) => {
     return (
         <S.ContainerBackground>
             <S.Container>
-                <S.Header>헤더</S.Header>
+                <S.Header>경기 상세 기록</S.Header>
                 <S.Body>
                     <S.HeadOfBodyWrap>
                         <S.HeadOfBody>{me[0].nickname}</S.HeadOfBody>
@@ -29,11 +29,13 @@ export const MatchDetail = (props: MatchDetailProps) => {
                         <S.HeadOfBody>경기 당 평균</S.HeadOfBody>
                         <S.HeadOfBody>{other[0].nickname}</S.HeadOfBody>
                     </S.HeadOfBodyWrap>
+                    <S.BodyOfBodyWrap>
                     <S.BodyOfBody>1</S.BodyOfBody>
                     <S.BodyOfBody>2</S.BodyOfBody>
                     <S.BodyOfBody>3</S.BodyOfBody>
                     <S.BodyOfBody>4</S.BodyOfBody>
                     <S.BodyOfBody>5</S.BodyOfBody>
+                    </S.BodyOfBodyWrap>
                 </S.Body>
                 <S.Foot>
                     <S.CloseBtn onClick={closeSelf} >닫기</S.CloseBtn>

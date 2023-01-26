@@ -30,13 +30,19 @@ export const HeadOfBodyWrap = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+border-top: 10px solid black;
 `
 export const HeadOfBody = styled.div`
+border-bottom: 1px solid black;
+margin: 10px;
 
 `
 
 export const BodyOfBody = styled.div`
 
+`
+
+export const BodyOfBodyWrap = styled.div`
 `
 
 export const Foot = styled.div`
