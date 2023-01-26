@@ -6,47 +6,83 @@ export const Container = styled.div`
 export const Div = styled.div`
 `
 
+export const MatchHead = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+`
+
+export const dataGuideBtn = styled.button`
+    width: 150px;
+    height: 42px;   
+    border: 1px solid #dbdee5;
+    box-sizing: border-box;
+    line-height: 42px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #a6a6b6;
+    margin-right: 10px;
+    position: relative;
+    background-color: white;
+    :hover{
+        cursor: pointer;
+        text-decoration: none;
+    }
+`
+
+export const TitleString = styled.div`
+    padding: 0 16px;
+    font-size: 25px;
+    color: rgb(20, 20, 50);
+`
+
+export const MatchDataDiv = styled.div`
+    border-top: 10px solid #3e3d55;
+`
+
 export const TableHead = styled.div`
     width: 850px;
     display: flex;
-    border-top: 5px solid black;
 `
 
 export const HeadItem = styled.div`
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #3e3d55;
     padding: 5px;
-    margin: 20px;
-    width: 120px;
+    margin: 10px;
+    width: 140px;
+    height: 30px;
+    color: #7a7984;
+    font-size: 18px;
 `
 
 export const TableBody = styled.div`
     display:flex;
-    border: 1px solid gray;
     width: 850px;
 `
 
 export const BodyItem = styled.div`
     text-align: center;
-    width: 120px;
+    width: 140px;
+    height: 40px;
     padding: 5px;
-    margin: 20px;
+    margin: 10px;
+    border-bottom: 1px solid #e2e2e6;
+    color: #919199;
 `
 
-export const Table = styled.table`
-    border: 1px solid gray;
-`
-
-export const Thead = styled.thead`
-`
-
-export const Tr = styled.tr`
-`
-
-export const Th = styled.th`
-`
-
-export const Td = styled.td`
-`
-export const Tbody = styled.tbody`
+export const DetailButton = styled.button`
+    background-color: white;
+    border: 1px solid #d4d9e2;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #7a7984;
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+    box-sizing: border-box;
+    :hover{
+        cursor: pointer;
+    }
 `
