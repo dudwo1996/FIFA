@@ -5,7 +5,7 @@ export const ContainerWrap = styled.div`
 `
 
 export const Header = styled.header`
-    height: 13%;
+    min-height: 13%;
 `
 
 export const ContainerMain = styled.div`
@@ -28,5 +28,6 @@ export const Article = styled.article`
 `
 
 export const Footer = styled.footer`
-height: 13%;
+    height: 13%;
+    min-height: 13%;
 `

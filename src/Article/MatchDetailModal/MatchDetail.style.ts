@@ -12,7 +12,7 @@ export const ContainerBackground = styled.div`
 `
 
 export const Container = styled.div`
-    border: 1px solid black;
+    border: 1px solid #3e3d55;
     width: 40%;
     background: #fff;
 `
