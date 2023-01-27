@@ -11,10 +11,11 @@ type MyInfoProps = {
         matchDetail: any;
     };
     userInfoRequest: Function;
+    isLoding: boolean;
 }
 
 export const MyInfo = (props: MyInfoProps) => {
-    const { userInfo, userInfoRequest } = props;
+    const { userInfo, userInfoRequest, isLoding } = props;
     const modalCtrl = useModal();
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);

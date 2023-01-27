@@ -12,8 +12,10 @@ import { ModalPlacer } from '../ModalPlacer'
 export const Home = () => {
     const dispatch = useDispatch();
     const [userInfo, setUserInfo] = useState({ nickname: '', level: 0, matchDetail: [] });
+    const [isLoding, setIsLoading] = useState(false);
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNjg5NTU2NTcwLCJpYXQiOjE2NzQwMDQ1NzAsIm5iZiI6MTY3NDAwNDU3MCwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.DtOiyxw1Piwe5xlvEc1EQ164Av7znhXB2pg0Xz3j-gI'
     const userInfoRequest = async (userName: string) => {
+        setIsLoading(true);
         const userInfoRes = await axios.get("https://api.nexon.co.kr/fifaonline4/v1.0/users", {
             headers: { Authorization: apiKey },
             params: { nickname: userName }
@@ -23,6 +25,7 @@ export const Home = () => {
             const fUMD = await findUserMatchDetail(fUMI.data);
             setUserInfo({ nickname: userInfoRes.data.nickname, level: userInfoRes.data.level, matchDetail: fUMD });
             dispatch(matchDataActions.set(fUMD));
+            setIsLoading(false);
         }
     }
     // user의 asseccId를 이용해 매치 정보 조회 하기
@@ -55,7 +58,7 @@ export const Home = () => {
                 </S.SideBarLeft> */}
                 <S.Main>
                     <S.Article>
-                        <MyInfo userInfo={userInfo} userInfoRequest={userInfoRequest} />
+                        <MyInfo userInfo={userInfo} userInfoRequest={userInfoRequest} isLoding={isLoding} />
                     </S.Article>
                 </S.Main>
                 {/* <S.SideBarRight>

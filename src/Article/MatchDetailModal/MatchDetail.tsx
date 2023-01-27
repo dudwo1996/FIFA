@@ -14,9 +14,6 @@ export const MatchDetail = (props: MatchDetailProps) => {
     const selectData = matchDetailData.matchDetail.data.filter((data: any) => data.matchId === matchId)
     const me = selectData[0].matchInfo.filter((match: any) => match.nickname === userName);
     const other = selectData[0].matchInfo.filter((match: any) => match.nickname !== userName);
-    console.log(selectData);
-    console.log('me', me);
-    console.log('other', other);
     return (
         <S.ContainerBackground onClick={closeSelf}>
             <S.Container>
@@ -88,9 +85,6 @@ export const MatchDetail = (props: MatchDetailProps) => {
                         <S.BodyOfBody>{other[0]?.matchDetail?.injury}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                 </S.Body>
-                {/* <S.Foot>
-                    <S.CloseBtn onClick={closeSelf} >닫기</S.CloseBtn>
-                </S.Foot> */}
             </S.Container>
         </S.ContainerBackground>
     )
