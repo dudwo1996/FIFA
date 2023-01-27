@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 export const ContainerWrap = styled.div`
-    height: 100vh;
 `
 
 export const Header = styled.header`

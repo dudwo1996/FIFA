@@ -106,3 +106,7 @@ export const searchBtn = styled.button`
         cursor: pointer;
     }
 `
+
+export const Loading = styled.img`
+margin: 100px
+`

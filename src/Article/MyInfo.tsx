@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useModal } from "../hooks/useModal";
 import { MatchDetail } from "./MatchDetailModal/MatchDetail";
+import spining from "../../resource/spining/Pulse-1s-500px (1).gif";
 type MyInfoProps = {
     userInfo: {
         nickname: string;
@@ -31,7 +32,7 @@ export const MyInfo = (props: MyInfoProps) => {
     }
     return (
         <S.Container>
-            {userInfo.matchDetail.length !== 0 ?
+            {isLoding ? <S.Loading src={ spining } alt='loading' />: userInfo.matchDetail.length !== 0 ?
                 <>
                     <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
                     <S.searchBtn onClick={() => userInfoRequest(userName)}>검색</S.searchBtn>
