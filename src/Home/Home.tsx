@@ -15,17 +15,26 @@ export const Home = () => {
     const [isLoding, setIsLoading] = useState(false);
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNjg5NTU2NTcwLCJpYXQiOjE2NzQwMDQ1NzAsIm5iZiI6MTY3NDAwNDU3MCwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.DtOiyxw1Piwe5xlvEc1EQ164Av7znhXB2pg0Xz3j-gI'
     const userInfoRequest = async (userName: string) => {
-        setIsLoading(true);
-        const userInfoRes = await axios.get("https://api.nexon.co.kr/fifaonline4/v1.0/users", {
-            headers: { Authorization: apiKey },
-            params: { nickname: userName }
-        });
-        if (userInfoRes.status === 200) {
+        try {
+            if (userName.length === 0) {
+                alert("유저명을 입력해주세요.");
+                return;
+            }
+            setIsLoading(true);
+            const userInfoRes = await axios.get("https://api.nexon.co.kr/fifaonline4/v1.0/users", {
+                headers: { Authorization: apiKey },
+                params: { nickname: userName }
+            });
             const fUMI = await findUserMatchInfo(userInfoRes.data.accessId);
-            const fUMD = await findUserMatchDetail(fUMI.data);
-            setUserInfo({ nickname: userInfoRes.data.nickname, level: userInfoRes.data.level, matchDetail: fUMD });
-            dispatch(matchDataActions.set(fUMD));
-            setIsLoading(false);
+            if (fUMI.data.length === 0) {
+                alert('존재하지 않는 유저입니다.');
+            } 
+                const fUMD = await findUserMatchDetail(fUMI.data);
+                setUserInfo({ nickname: userInfoRes.data.nickname, level: userInfoRes.data.level, matchDetail: fUMD });
+                dispatch(matchDataActions.set(fUMD));
+                setIsLoading(false);
+        } catch (error) {
+            throw error;
         }
     }
     // user의 asseccId를 이용해 매치 정보 조회 하기
