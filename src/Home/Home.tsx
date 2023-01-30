@@ -62,17 +62,17 @@ export const Home = () => {
                 <Header />
             </S.Header>
             <S.ContainerMain>
-                {/* <S.SideBarLeft>
+                <S.SideBarLeft>
                     <SquardChart />
-                </S.SideBarLeft> */}
+                </S.SideBarLeft>
                 <S.Main>
                     <S.Article>
                         <MyInfo userInfo={userInfo} userInfoRequest={userInfoRequest} isLoding={isLoding} />
                     </S.Article>
                 </S.Main>
-                {/* <S.SideBarRight>
+                <S.SideBarRight>
                     <UserSearch />
-                </S.SideBarRight> */}
+                </S.SideBarRight>
             </S.ContainerMain>
             <S.Footer>
                 <Footer />

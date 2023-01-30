@@ -8,7 +8,7 @@ export const Header = styled.header`
 `
 
 export const ContainerMain = styled.div`
-    min-height: 74%;
+    min-height: 450px;
     display: flex;
     justify-content: space-evenly;
 `
@@ -27,6 +27,4 @@ export const Article = styled.article`
 `
 
 export const Footer = styled.footer`
-    height: 13%;
-    min-height: 13%;
 `

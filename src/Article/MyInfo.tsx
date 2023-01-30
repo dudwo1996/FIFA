@@ -23,6 +23,7 @@ export const MyInfo = (props: MyInfoProps) => {
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);
     const [userName, setUserName] = useState('');
+    const [isHover, setIsHover] = useState(false);
 
     const onChangeUserName = (name: string) => {
         setUserName(name);
@@ -34,18 +35,30 @@ export const MyInfo = (props: MyInfoProps) => {
     }
     return (
         <S.Container>
-            {isLoding ? <S.Loading src={ spining } alt='loading' />: userInfo.matchDetail.length !== 0 ?
+            {isLoding ? <S.Loading src={spining} alt='loading' /> : userInfo.matchDetail.length !== 0 ?
                 <>
                     <S.Form onSubmit={() => userInfoRequest(userName)}>
-                    <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
-                    <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess}/></S.searchBtn>
+                        <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
+                        <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess} /></S.searchBtn>
                     </S.Form>
                     <S.Div>
-                        반갑습니다. <S.Span>{userInfo.nickname}(Lv:{userInfo.level})</S.Span> 구단주님!
+                        <S.Span>{userInfo.nickname}(Lv:{userInfo.level})</S.Span><S.Span2>님의 경기 기록</S.Span2>
                     </S.Div>
                     <S.MatchHead>
                         <S.TitleString>경기 기록</S.TitleString>
-                        <S.dataGuideBtn>데이터 가이드<S.questionMargImg src={questionMark}/></S.dataGuideBtn>
+                        <S.dataGuideBtn onMouseOver={() => { console.log(true), setIsHover(true) }} onMouseOut={() => { console.log(false), setIsHover(false) }} >데이터 가이드<S.questionMargImg src={questionMark} /></S.dataGuideBtn>
+                        {isHover ? <S.dataGuideDesc >
+                            <S.Ul>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
+                            </S.Ul>
+                            <S.Arrow/>
+                        </S.dataGuideDesc> : null}
                     </S.MatchHead>
                     <S.MatchDataDiv>
                         <S.TableHead>
@@ -69,7 +82,7 @@ export const MyInfo = (props: MyInfoProps) => {
                                             {other?.shoot?.goalTotal}
                                         </S.BodyItem>
                                         <S.BodyItem result="">{other?.nickname}</S.BodyItem>
-                                        <S.BodyItem result={ me?.matchDetail?.matchResult }>{me?.matchDetail?.matchResult}</S.BodyItem>
+                                        <S.BodyItem result={me?.matchDetail?.matchResult}>{me?.matchDetail?.matchResult}</S.BodyItem>
                                     </S.TableBody>
                                 )
                             })
@@ -78,8 +91,8 @@ export const MyInfo = (props: MyInfoProps) => {
                 </>
                 : <>
                     <S.Form onSubmit={() => userInfoRequest(userName)}>
-                    <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
-                    <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess}/></S.searchBtn>
+                        <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
+                        <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess} /></S.searchBtn>
                     </S.Form>
                 </>
             }

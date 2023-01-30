@@ -9,7 +9,11 @@ margin: 15px;
 `
 
 export const Span = styled.span`
-font-weight: 850;
+color: #e37c40;
+// color: #eddc81;
+font-weight: 1000;
+`
+export const Span2 = styled.span`
 `
 
 export const MatchHead = styled.div`
@@ -40,6 +44,20 @@ export const dataGuideBtn = styled.button`
         text-decoration: none;
     }
 `
+
+export const dataGuideDesc = styled.div`
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    top: 49%;
+    right: 8.2%;
+    background-color: #ffffff;
+    -webkit-transition: 1s;
+    -webkit-transition: 1s;
+    transition: 1s;
+    font-size: 14px;
+    box-shadow: 1px 1px 35px rgb(0 0 0 / 55%);
+    `
 
 export const TitleString = styled.div`
     padding: 0 16px;
@@ -88,7 +106,7 @@ padding: 5px;
 margin-top: 10px;
 border-bottom: 1px solid #e2e2e6;
 color: #919199;
-${(props) => (props.result === '승' ? `color: blue;` : props.result === '패'? `color: red;` : `color: #919199;`)}
+${(props) => (props.result === '승' ? `color: blue;` : props.result === '패' ? `color: red;` : `color: #919199;`)}
 `
 
 export const Result = styled.span`
@@ -117,6 +135,7 @@ export const DetailButton = styled.button`
     box-sizing: border-box;
     :hover{
         cursor: pointer;
+        background-color: #eddc81;
     }
 `
 
@@ -140,7 +159,7 @@ export const searchBtn = styled.button`
     margin: none;
     :hover{
         cursor: pointer;
-        background-color: #c3e0d1;
+        background-color: #eddc81;
     }
     width: 100px;
 `
@@ -164,4 +183,23 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 50px;
+`
+
+export const Ul = styled.ul`
+`
+
+export const Li = styled.li`
+`
+
+
+export const Arrow = styled.div`
+width: 30px;
+height: 30px;
+background-color: #ffffff;
+rotate: -45deg;
+left: -10;
+top: -10;
+position: absolute;
+top: -15px;
+left: 125px;
 `

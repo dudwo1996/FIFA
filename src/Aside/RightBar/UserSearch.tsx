@@ -7,7 +7,6 @@ export const UserSearch = (props: UserSearchProps) => {
 
     return (
         <S.Container>
-            우측
         </S.Container>
     )
 }

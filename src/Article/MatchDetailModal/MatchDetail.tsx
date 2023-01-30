@@ -26,62 +26,62 @@ export const MatchDetail = (props: MatchDetailProps) => {
                     </S.HeadOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.shoot?.goalTotal}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>골</S.BodyOfBody>
+                        <S.BodyOfBody>골</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.shoot.goalTotal}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.shoot?.shootTotal}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>슛</S.BodyOfBody>
+                        <S.BodyOfBody>슛</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.shoot?.shootTotal}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.shoot?.effectiveShootTotal}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>유효슛</S.BodyOfBody>
+                        <S.BodyOfBody>유효슛</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.shoot?.effectiveShootTotal}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{Math.round(me[0]?.shoot?.goalTotal / me[0].shoot.shootTotal * 100)}%</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>공격 성공률(%)</S.BodyOfBody>
+                        <S.BodyOfBody>공격 성공률(%)</S.BodyOfBody>
                         <S.BodyOfBody>{Math.round(other[0]?.shoot?.goalTotal / other[0]?.shoot?.shootTotal * 100)}%</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{Math.round(me[0]?.pass?.passSuccess / me[0]?.pass?.passTry * 100)}%</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>패스 성공률(%)</S.BodyOfBody>
+                        <S.BodyOfBody>패스 성공률(%)</S.BodyOfBody>
                         <S.BodyOfBody>{Math.round(other[0]?.pass?.passSuccess / other[0]?.pass?.passTry * 100)}%</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.possession}%</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>점유율(%)</S.BodyOfBody>
+                        <S.BodyOfBody>점유율(%)</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.possession}%</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.cornerKick}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>코너킥</S.BodyOfBody>
+                        <S.BodyOfBody>코너킥</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.cornerKick}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.defence?.tackleTry}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>태클</S.BodyOfBody>
+                        <S.BodyOfBody>태클</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.defence?.tackleTry}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.foul}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>파울</S.BodyOfBody>
+                        <S.BodyOfBody>파울</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.foul}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.yellowCards}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>경고</S.BodyOfBody>
+                        <S.BodyOfBody>경고</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.yellowCards}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.redCards}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>퇴장</S.BodyOfBody>
+                        <S.BodyOfBody>퇴장</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.redCards}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                     <S.BodyOfBodyWrap>
                         <S.BodyOfBody>{me[0]?.matchDetail?.injury}</S.BodyOfBody>
-                        <S.BodyOfBody style={{ backgroundColor: '#f8f7ff' }}>부상</S.BodyOfBody>
+                        <S.BodyOfBody>부상</S.BodyOfBody>
                         <S.BodyOfBody>{other[0]?.matchDetail?.injury}</S.BodyOfBody>
                     </S.BodyOfBodyWrap>
                 </S.Body>
