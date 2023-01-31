@@ -8,7 +8,7 @@ export const Header = styled.header`
 `
 
 export const ContainerMain = styled.div`
-    min-height: 450px;
+    min-height: 700px;
     display: flex;
     justify-content: space-evenly;
 `

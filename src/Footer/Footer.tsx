@@ -10,9 +10,9 @@ export const Footer = () => {
     return (
         <S.Container>
             <S.DivWrap>
-                <S.ItemDiv><S.Atag href="http://www.github.com/dudwo1996"><S.FooterImg src={git} /></S.Atag></S.ItemDiv>
-                <S.ItemDiv><S.Atag href="https://www.youtube.com/@EASPORTSTMFIFAONLINE"><S.FooterImg src={youtube} /></S.Atag></S.ItemDiv>
-                <S.ItemDiv><S.Atag href="https://fifaonline4.nexon.com/main/index"><S.FooterImg src={fifa} /></S.Atag></S.ItemDiv>
+                <S.ItemDiv><S.Atag href="http://www.github.com/dudwo1996" target='_blank'><S.FooterImg src={git} /></S.Atag></S.ItemDiv>
+                <S.ItemDiv><S.Atag href="https://www.youtube.com/@EASPORTSTMFIFAONLINE" target='_blank'><S.FooterImg src={youtube} /></S.Atag></S.ItemDiv>
+                <S.ItemDiv><S.Atag href="https://fifaonline4.nexon.com/main/index" target='_blank'><S.FooterImg src={fifa} /></S.Atag></S.ItemDiv>
             </S.DivWrap>
         </S.Container>
     )

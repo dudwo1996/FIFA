@@ -23,7 +23,7 @@ export const MyInfo = (props: MyInfoProps) => {
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);
     const [userName, setUserName] = useState('');
-    const [isHover, setIsHover] = useState(false);
+    const [isHover, setIsHover] = useState<HTMLButtonElement | null>(null);
 
     const onChangeUserName = (name: string) => {
         setUserName(name);
@@ -46,19 +46,17 @@ export const MyInfo = (props: MyInfoProps) => {
                     </S.Div>
                     <S.MatchHead>
                         <S.TitleString>경기 기록</S.TitleString>
-                        <S.dataGuideBtn onMouseOver={() => { console.log(true), setIsHover(true) }} onMouseOut={() => { console.log(false), setIsHover(false) }} >데이터 가이드<S.questionMargImg src={questionMark} /></S.dataGuideBtn>
-                        {isHover ? <S.dataGuideDesc >
-                            <S.Ul>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                                <S.Li>경기 기록은 최근 20경기의 공식 경기 기록입니다.</S.Li>
-                            </S.Ul>
-                            <S.Arrow/>
-                        </S.dataGuideDesc> : null}
+                        <S.dataGuideBtn>데이터 가이드<S.questionMargImg src={questionMark} />
+                            <S.dataGuideDesc >
+                                <S.Ul>
+                                    <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
+                                    <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
+                                    <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
+                                </S.Ul>
+                                <S.Arrow />
+                            </S.dataGuideDesc>
+                        </S.dataGuideBtn>
+
                     </S.MatchHead>
                     <S.MatchDataDiv>
                         <S.TableHead>

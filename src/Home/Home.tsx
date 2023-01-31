@@ -28,11 +28,11 @@ export const Home = () => {
             const fUMI = await findUserMatchInfo(userInfoRes.data.accessId);
             if (fUMI.data.length === 0) {
                 alert('존재하지 않는 유저입니다.');
-            } 
-                const fUMD = await findUserMatchDetail(fUMI.data);
-                setUserInfo({ nickname: userInfoRes.data.nickname, level: userInfoRes.data.level, matchDetail: fUMD });
-                dispatch(matchDataActions.set(fUMD));
-                setIsLoading(false);
+            }
+            const fUMD = await findUserMatchDetail(fUMI.data);
+            setUserInfo({ nickname: userInfoRes.data.nickname, level: userInfoRes.data.level, matchDetail: fUMD });
+            dispatch(matchDataActions.set(fUMD));
+            setIsLoading(false);
         } catch (error) {
             throw error;
         }

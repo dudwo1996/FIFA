@@ -26,7 +26,6 @@ export const FooterImg = styled.img`
     :hover{
         border-radius: 50px;
         cursor: pointer;
-        width: 60px;
-        height: 60px;
-    }
+        transform: scale(1.1);
+}
 `

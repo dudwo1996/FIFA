@@ -25,11 +25,13 @@ export const MatchHead = styled.div`
 `
 
 export const dataGuideBtn = styled.button`
+    --button-height: 42px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 42px;   
+    height: var(--button-height);   
     border: 1px solid #dbdee5;
     box-sizing: border-box;
     line-height: 42px;
@@ -42,21 +44,29 @@ export const dataGuideBtn = styled.button`
     :hover{
         cursor: pointer;
         text-decoration: none;
+
+        & > div {
+           display: block;
+        }
     }
+    & > div {
+            display: none;
+        }
 `
 
 export const dataGuideDesc = styled.div`
     position: absolute;
     width: 400px;
     height: 150px;
-    top: 49%;
-    right: 8.2%;
+    top: 0;
+    left: 0;
     background-color: #ffffff;
     -webkit-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
     font-size: 14px;
     box-shadow: 1px 1px 35px rgb(0 0 0 / 55%);
+    transform: translate(-15px, 60px);
     `
 
 export const TitleString = styled.div`
