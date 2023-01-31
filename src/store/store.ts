@@ -11,4 +11,6 @@ const store = configureStore({
         getDefaultMiddleware({ immutableCheck: false, serializableCheck: false }),
 });
 
+export type ReduxRootState = ReturnType<typeof store.getState>;
+
 export default store;
