@@ -157,6 +157,17 @@ export const userNameInput = styled.input`
     padding-left: 15px;
 `
 
+export const matchTypeSelect = styled.select`
+    background-color: white;
+    border: 1px solid #d4d9e2;
+    height: 34px;
+    width: 100px;
+    padding-left: 5px;
+`
+
+export const matchTypeOptions = styled.option`
+`
+
 export const searchBtn = styled.button`
     display: flex;
     justify-content: center;

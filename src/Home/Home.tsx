@@ -14,8 +14,9 @@ export const Home = () => {
     const [userInfo, setUserInfo] = useState({ nickname: '', level: 0, matchDetail: [] });
     const [isLoding, setIsLoading] = useState(false);
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNjg5NTU2NTcwLCJpYXQiOjE2NzQwMDQ1NzAsIm5iZiI6MTY3NDAwNDU3MCwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.DtOiyxw1Piwe5xlvEc1EQ164Av7znhXB2pg0Xz3j-gI'
-    const userInfoRequest = async (userName: string) => {
+    const userInfoRequest = async (userName: string, matchType: number) => {
         try {
+            console.log('오나', matchType);
             if (userName.length === 0) {
                 alert("유저명을 입력해주세요.");
                 return;
@@ -25,7 +26,7 @@ export const Home = () => {
                 headers: { Authorization: apiKey },
                 params: { nickname: userName }
             });
-            const fUMI = await findUserMatchInfo(userInfoRes.data.accessId);
+            const fUMI = await findUserMatchInfo(userInfoRes.data.accessId, matchType);
             if (fUMI.data.length === 0) {
                 alert('존재하지 않는 유저입니다.');
             }
@@ -38,8 +39,8 @@ export const Home = () => {
         }
     }
     // user의 asseccId를 이용해 매치 정보 조회 하기
-    const findUserMatchInfo = (userAccessId: string) => {
-        const userMatchRes = axios.get(`https://api.nexon.co.kr/fifaonline4/v1.0/users/${userAccessId}/matches?matchtype=${50}&offset=${0}&limit=${20}`, {
+    const findUserMatchInfo = (userAccessId: string, matchType: number) => {
+        const userMatchRes = axios.get(`https://api.nexon.co.kr/fifaonline4/v1.0/users/${userAccessId}/matches?matchtype=${matchType}&offset=${0}&limit=${20}`, {
             headers: { Authorization: apiKey }
         });
         return userMatchRes;

@@ -23,6 +23,7 @@ export const MyInfo = (props: MyInfoProps) => {
     //userMatchDetailInfo.matchDetail.data
     const userMatchDetailInfo: any = useSelector((state) => state);
     const [userName, setUserName] = useState('');
+    const [matchType, setMatchType] = useState(50);
     const [isHover, setIsHover] = useState<HTMLButtonElement | null>(null);
 
     const onChangeUserName = (name: string) => {
@@ -33,13 +34,24 @@ export const MyInfo = (props: MyInfoProps) => {
 
         modalCtrl.open(<MatchDetail matchId={matchId} userName={userName} />);
     }
+
+    const MatchTypeOnChange = (e: any) => {
+        console.log(e.target.value);
+        setMatchType(e.target.value);
+    }
+
     return (
         <S.Container>
             {isLoding ? <S.Loading src={spining} alt='loading' /> : userInfo.matchDetail.length !== 0 ?
                 <>
-                    <S.Form onSubmit={() => userInfoRequest(userName)}>
+                    <S.Form onSubmit={() => userInfoRequest(userName, matchType)}>
+                        <S.matchTypeSelect onChange={e => MatchTypeOnChange(e)}>
+                            <S.matchTypeOptions value={50}>공식경기</S.matchTypeOptions>
+                            <S.matchTypeOptions value={40}>클래식 1on1</S.matchTypeOptions>
+                            <S.matchTypeOptions value={52}>감독모드</S.matchTypeOptions>
+                        </S.matchTypeSelect>
                         <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
-                        <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess} /></S.searchBtn>
+                        <S.searchBtn onClick={() => userInfoRequest(userName, matchType)}><S.GlassessImg src={glassess} /></S.searchBtn>
                     </S.Form>
                     <S.Div>
                         <S.Span>{userInfo.nickname}(Lv:{userInfo.level})</S.Span><S.Span2>님의 경기 기록</S.Span2>
@@ -88,9 +100,14 @@ export const MyInfo = (props: MyInfoProps) => {
                     </S.MatchDataDiv>
                 </>
                 : <>
-                    <S.Form onSubmit={() => userInfoRequest(userName)}>
+                    <S.Form onSubmit={() => userInfoRequest(userName, matchType)}>
+                        <S.matchTypeSelect onChange={e => MatchTypeOnChange(e)}>
+                            <S.matchTypeOptions value={50}>공식경기</S.matchTypeOptions>
+                            <S.matchTypeOptions value={40}>클래식 1on1</S.matchTypeOptions>
+                            <S.matchTypeOptions value={52}>감독모드</S.matchTypeOptions>
+                        </S.matchTypeSelect>
                         <S.userNameInput placeholder="유저명을 입력하세요." value={userName} onChange={(e) => onChangeUserName(e.target.value)} />
-                        <S.searchBtn onClick={() => userInfoRequest(userName)}><S.GlassessImg src={glassess} /></S.searchBtn>
+                        <S.searchBtn onClick={() => userInfoRequest(userName, matchType)}><S.GlassessImg src={glassess} /></S.searchBtn>
                     </S.Form>
                 </>
             }
