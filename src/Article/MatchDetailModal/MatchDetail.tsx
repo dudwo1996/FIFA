@@ -12,7 +12,7 @@ type MatchDetailProps = {
 export const MatchDetail = (props: MatchDetailProps) => {
     const { closeSelf, matchId, userName } = props;
     const matchDetailData: any = useSelector(selectDatas());
-    const selectData = matchDetailData.matchDetail.data.filter((data: any) => data.matchId === matchId)
+    const selectData = matchDetailData.filter((data: any) => data.matchId === matchId);
     const me = selectData[0].matchInfo.filter((match: any) => match.nickname === userName);
     const other = selectData[0].matchInfo.filter((match: any) => match.nickname !== userName);
     return (
