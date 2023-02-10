@@ -36,7 +36,6 @@ export const MyInfo = (props: MyInfoProps) => {
     }
 
     const MatchTypeOnChange = (e: any) => {
-        console.log(e.target.value);
         setMatchType(e.target.value);
     }
 

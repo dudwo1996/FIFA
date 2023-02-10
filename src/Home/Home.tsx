@@ -16,7 +16,6 @@ export const Home = () => {
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNjg5NTU2NTcwLCJpYXQiOjE2NzQwMDQ1NzAsIm5iZiI6MTY3NDAwNDU3MCwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.DtOiyxw1Piwe5xlvEc1EQ164Av7znhXB2pg0Xz3j-gI'
     const userInfoRequest = async (userName: string, matchType: number) => {
         try {
-            console.log('오나', matchType);
             if (userName.length === 0) {
                 alert("유저명을 입력해주세요.");
                 return;
