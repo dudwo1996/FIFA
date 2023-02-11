@@ -60,7 +60,7 @@ export const MyInfo = (props: MyInfoProps) => {
                         <S.dataGuideBtn>데이터 가이드<S.questionMargImg src={questionMark} />
                             <S.dataGuideDesc >
                                 <S.Ul>
-                                    <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
+                                    <S.Li>표출되는 모든 데이터는 피파온라인4 OpenApi를 이용하여 표출되는 데이터입니다.</S.Li>
                                     <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
                                     <S.Li>경기 기록은 최근 20경기의 경기 기록입니다.</S.Li>
                                 </S.Ul>
