@@ -13,7 +13,7 @@ export const Home = () => {
     const dispatch = useDispatch();
     const [userInfo, setUserInfo] = useState({ nickname: '', level: 0, matchDetail: [] });
     const [isLoding, setIsLoading] = useState(false);
-    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNjg5NTU2NTcwLCJpYXQiOjE2NzQwMDQ1NzAsIm5iZiI6MTY3NDAwNDU3MCwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.DtOiyxw1Piwe5xlvEc1EQ164Av7znhXB2pg0Xz3j-gI'
+    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLUFwcC1SYXRlLUxpbWl0IjoiNTAwOjEwIiwiYWNjb3VudF9pZCI6Ijk3MzY5NTkxMCIsImF1dGhfaWQiOiIyIiwiZXhwIjoxNzA4ODM2MjI1LCJpYXQiOjE2OTMyODQyMjUsIm5iZiI6MTY5MzI4NDIyNSwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsInRva2VuX3R5cGUiOiJBY2Nlc3NUb2tlbiJ9.CVQQbWUDhfSubSDEUtBeGdDTNmSmdWlDp5uKwIDqkao'
     const userInfoRequest = async (userName: string, matchType: number) => {
         try {
             if (userName.length === 0) {
